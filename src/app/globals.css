@@ -3,52 +3,264 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
-  --radius: 0.5rem;
-}
-
-.dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --bubble1: 217 69% 39%;
+  --bubble2: 209 58% 55%;
+  --bubble3: 202 79% 70%;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.fade-away {
+  color: hsl(var(--foreground));
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  animation: fadeAway 2s forwards;
+}
+
+@keyframes fadeAway {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-150px);
+  }
+}
+
+/*///////////////////////////////// BACKGROUND /////////////////////////////////*/
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #fff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(177, 211, 251, 1) 100%
+  );
+  overflow: hidden;
+  z-index: -999;
+}
+.background span {
+  width: 50vmin;
+  height: 50vmin;
+  border-radius: 50vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 6;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.background span:nth-child(0) {
+  color: hsl(var(--bubble1));
+  top: 84%;
+  left: 65%;
+  animation-duration: 268s;
+  animation-delay: -118s;
+  transform-origin: 13vw -9vh;
+  box-shadow: 100vmin 0 12.8957328702vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: hsl(var(--bubble3));
+  top: 51%;
+  left: 41%;
+  animation-duration: 19s;
+  animation-delay: -131s;
+  transform-origin: -24vw -3vh;
+  box-shadow: -100vmin 0 13.4269198785vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: hsl(var(--bubble1));
+  top: 94%;
+  left: 32%;
+  animation-duration: 218s;
+  animation-delay: -352s;
+  transform-origin: 9vw -14vh;
+  box-shadow: -100vmin 0 12.8191314691vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: hsl(var(--bubble1));
+  top: 50%;
+  left: 8%;
+  animation-duration: 445s;
+  animation-delay: -413s;
+  transform-origin: 19vw 19vh;
+  box-shadow: -100vmin 0 13.2465918949vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: hsl(var(--bubble1));
+  top: 49%;
+  left: 19%;
+  animation-duration: 303s;
+  animation-delay: -240s;
+  transform-origin: 5vw -14vh;
+  box-shadow: 100vmin 0 12.7043410045vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: hsl(var(--bubble3));
+  top: 67%;
+  left: 10%;
+  animation-duration: 42s;
+  animation-delay: -361s;
+  transform-origin: 3vw -15vh;
+  box-shadow: -100vmin 0 13.0521581416vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: hsl(var(--bubble3));
+  top: 96%;
+  left: 32%;
+  animation-duration: 226s;
+  animation-delay: -423s;
+  transform-origin: 12vw -16vh;
+  box-shadow: -100vmin 0 13.0868920124vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: hsl(var(--bubble3));
+  top: 58%;
+  left: 82%;
+  animation-duration: 259s;
+  animation-delay: -432s;
+  transform-origin: 17vw 22vh;
+  box-shadow: 100vmin 0 12.7575115528vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: hsl(var(--bubble1));
+  top: 28%;
+  left: 88%;
+  animation-duration: 38s;
+  animation-delay: -383s;
+  transform-origin: -12vw 20vh;
+  box-shadow: 100vmin 0 13.1633139908vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: hsl(var(--bubble3));
+  top: 37%;
+  left: 90%;
+  animation-duration: 191s;
+  animation-delay: -144s;
+  transform-origin: 11vw 6vh;
+  box-shadow: -100vmin 0 13.0755676908vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: hsl(var(--bubble1));
+  top: 71%;
+  left: 48%;
+  animation-duration: 242s;
+  animation-delay: -285s;
+  transform-origin: -5vw -19vh;
+  box-shadow: 100vmin 0 13.4981984499vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: hsl(var(--bubble1));
+  top: 73%;
+  left: 66%;
+  animation-duration: 418s;
+  animation-delay: -9s;
+  transform-origin: 23vw 21vh;
+  box-shadow: 100vmin 0 13.3622021405vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: hsl(var(--bubble1));
+  top: 6%;
+  left: 4%;
+  animation-duration: 187s;
+  animation-delay: -285s;
+  transform-origin: 9vw 5vh;
+  box-shadow: 100vmin 0 12.8053833819vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: hsl(var(--bubble1));
+  top: 14%;
+  left: 28%;
+  animation-duration: 77s;
+  animation-delay: -307s;
+  transform-origin: 19vw 1vh;
+  box-shadow: 100vmin 0 12.6908898868vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: hsl(var(--bubble1));
+  top: 98%;
+  left: 66%;
+  animation-duration: 15s;
+  animation-delay: -146s;
+  transform-origin: -11vw 17vh;
+  box-shadow: -100vmin 0 13.2641271732vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: hsl(var(--bubble1));
+  top: 98%;
+  left: 60%;
+  animation-duration: 441s;
+  animation-delay: -8s;
+  transform-origin: -13vw -18vh;
+  box-shadow: -100vmin 0 13.0561900846vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: hsl(var(--bubble3));
+  top: 2%;
+  left: 91%;
+  animation-duration: 122s;
+  animation-delay: -422s;
+  transform-origin: -20vw 23vh;
+  box-shadow: 100vmin 0 12.7431224435vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: hsl(var(--bubble3));
+  top: 69%;
+  left: 65%;
+  animation-duration: 87s;
+  animation-delay: -386s;
+  transform-origin: 20vw 14vh;
+  box-shadow: 100vmin 0 12.588978194vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: hsl(var(--bubble1));
+  top: 15%;
+  left: 69%;
+  animation-duration: 305s;
+  animation-delay: -171s;
+  transform-origin: 25vw -12vh;
+  box-shadow: 100vmin 0 13.3040091328vmin currentColor;
+}
+.background span:nth-child(19) {
+  color: hsl(var(--bubble1));
+  top: 35%;
+  left: 15%;
+  animation-duration: 165s;
+  animation-delay: -345s;
+  transform-origin: 18vw 9vh;
+  box-shadow: -100vmin 0 13.0695465687vmin currentColor;
 }

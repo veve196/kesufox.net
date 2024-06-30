@@ -7,32 +7,9 @@ export default function Avatar() {
   const handleClick = async (e: React.MouseEvent<HTMLImageElement>) => {
     const text = document.createElement("span");
 
-    const emojis = [
-      "👉👈",
-      "🥺",
-      "💕",
-      "💗",
-      "🧡",
-      "💦",
-      "💙",
-      "💘",
-      "💓",
-      "💖",
-      "💚",
-      "💛",
-      "💜",
-      "💝",
-      "💞",
-      "💟",
-      "🖤",
-      "🤍",
-      "🤎",
-      "❤️‍🩹",
-      "❤️‍🔥",
-      "i'm trying to reach you about your car's extended warranty",
-    ];
+    const messages = ["*boop*"];
 
-    text.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    text.textContent = messages[Math.floor(Math.random() * messages.length)];
     text.className = "fade-away";
     text.style.left = `${e.pageX}px`;
     text.style.top = `${e.pageY - 40}px`; // Bisschen höher setzen weil der Daumen sonst verdeckt
@@ -47,13 +24,14 @@ export default function Avatar() {
 
   return (
     <Image
-      width={200}
-      height={200}
-      src="/veve.png"
-      alt="veve"
-      title="Goober"
+      width={250}
+      height={250}
+      src="/kesufox.webp"
+      alt="kesufox avatar"
+      title="Boop me!"
+      priority
       draggable={false}
-      className="rounded-full mx-auto select-none border"
+      className="rounded-full mx-auto select-none p-1 border border-background"
       onClick={(e) => handleClick(e)}
     />
   );
