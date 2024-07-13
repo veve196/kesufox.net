@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import getBoops from "@/utils/server-api/getBoops";
 import { SiSteam, SiTelegram, SiX } from "@icons-pack/react-simple-icons";
 import Link from "next/link";
-
+export const runtime = "edge";
 export default async function Home() {
   const boops = await getBoops();
 
