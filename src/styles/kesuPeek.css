@@ -1,0 +1,44 @@
+#kesuPeek {
+  user-select: none;
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  bottom: -100px;
+  transition-duration: 0.5s;
+}
+
+#kesuPeek:hover {
+  bottom: 0;
+}
+
+.speech-bubble {
+  position: absolute;
+  visibility: hidden;
+  background-color: #f1f1f1;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  z-index: 1;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  transition: visibility 0s, opacity 0.2s linear;
+}
+
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f1f1f1 transparent transparent transparent;
+}
+
+#kesuPeek:hover + .speech-bubble,
+#kesuPeek:active + .speech-bubble {
+  visibility: visible;
+  opacity: 1;
+}

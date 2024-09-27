@@ -12,7 +12,7 @@ export default function BoopCounter({ count }: Props) {
   const [boopCounter, setBoopCounter] = useState(count);
   useEffect(() => {
     client.subscribe(
-      "databases.web.collections.boops.documents.default",
+      "databases.web.collections.counters.documents.kesuBoops",
       (response: RealtimeResponseEvent<any>) => {
         setBoopCounter(response.payload.count);
       }
