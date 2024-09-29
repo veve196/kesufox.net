@@ -32,7 +32,7 @@ export default function Avatar() {
       priority
       draggable={false}
       className="rounded-full mx-auto select-none p-1 border border-background"
-      onClick={(e) => handleClick(e)}
+      onClick={handleClick}
     />
   );
 }
