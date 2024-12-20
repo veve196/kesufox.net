@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import Background from "@/components/background";
 import KesuPeek from "@/components/kesuPeek";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
         <main className="mx-auto max-w-[600px] my-16 lg:px-0">{children}</main>
         <Background />
         <KesuPeek />
+        <Toaster />
       </body>
     </html>
   );
