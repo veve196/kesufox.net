@@ -7,10 +7,10 @@ export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Refsheet",
-  description: "Made by Oggy123!",
+  description: "Made by KeaveMind!",
   openGraph: {
     title: "Refsheet",
-    description: "Made by Oggy123!",
+    description: "Made by KeaveMind!",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_DOMAIN}/ref/refsheet.webp`,
