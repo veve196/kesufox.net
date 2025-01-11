@@ -4,8 +4,22 @@ import Image from "next/image";
 import { Metadata } from "next/types";
 
 export const runtime = "edge";
+
 export const metadata: Metadata = {
   title: "Refsheet",
+  description: "Made by Oggy123!",
+  openGraph: {
+    title: "Refsheet",
+    description: "Made by Oggy123!",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/ref/refsheet.jpg`,
+        width: 1262,
+        height: 1147,
+        alt: "Refsheet",
+      },
+    ],
+  },
 };
 
 export default function Refsheet() {

@@ -31,7 +31,7 @@ export default function Avatar() {
       title="Boop me!"
       priority
       draggable={false}
-      className="rounded-full mx-auto select-none p-1 border border-background"
+      className="rounded-full mx-auto select-none p-1 border border-background cursor-pointer"
       onClick={handleClick}
     />
   );

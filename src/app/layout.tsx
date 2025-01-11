@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../styles/globals.css";
 import Background from "@/components/background";
 import KesuPeek from "@/components/kesuPeek";
 import { Toaster } from "@/components/ui/toaster";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,10 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <main className="mx-auto max-w-[600px] my-16 lg:px-0">{children}</main>
-        <Background />
+        <main className="mx-auto max-w-4xl my-8 lg:px-0">{children}</main>
         <KesuPeek />
         <Toaster />
+        <Background />
       </body>
     </html>
   );
