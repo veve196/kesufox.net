@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     description: "Made by Oggy123!",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_DOMAIN}/ref/refsheet.jpg`,
-        width: 1262,
-        height: 1147,
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/ref/refsheet.webp`,
+        width: 1100,
+        height: 812,
         alt: "Refsheet",
       },
     ],
@@ -26,11 +26,11 @@ export default function Refsheet() {
   return (
     <>
       <Image
-        src="/ref/refsheet.jpg"
+        src="/ref/refsheet.webp"
         alt="Refsheet"
         title="Refsheet"
-        width={1262}
-        height={1147}
+        width={1100}
+        height={812}
         priority
         className="mx-auto mb-2 rounded-md object-cover"
       />
@@ -40,11 +40,15 @@ export default function Refsheet() {
           <ColorButton copyColor="#eaeaea" textColor="#000" />
           <ColorButton copyColor="#28282a" />
           <ColorButton copyColor="#a55808" />
+          <ColorButton copyColor="#431400" />
           <ColorButton copyColor="#e4a929" />
+          <ColorButton copyColor="#5e2224" />
+          <ColorButton copyColor="#f08e86" />
+          <ColorButton copyColor="#ffc4bf" />
         </div>
-        <a href="/ref/refsheet.jpg" download>
+        <a href="/ref/refsheet.png" download>
           <Button className="justify-end" title="full resolution">
-            Download
+            Download full res
           </Button>
         </a>
       </div>
