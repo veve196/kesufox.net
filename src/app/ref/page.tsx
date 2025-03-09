@@ -1,4 +1,4 @@
-import ColorButton from "@/components/colorButton";
+import ColorButton from "@/components/color-button";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Metadata } from "next/types";

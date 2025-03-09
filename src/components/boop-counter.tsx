@@ -1,6 +1,7 @@
 "use client";
 
 import { client } from "@/app/appwrite";
+import { CounterDocument } from "@/utils/models";
 import { RealtimeResponseEvent } from "appwrite";
 import { useEffect, useState } from "react";
 
@@ -13,7 +14,7 @@ export default function BoopCounter({ count }: Props) {
   useEffect(() => {
     client.subscribe(
       "databases.web.collections.counters.documents.kesuBoops",
-      (response: RealtimeResponseEvent<any>) => {
+      (response: RealtimeResponseEvent<CounterDocument>) => {
         setBoopCounter(response.payload.count);
       }
     );

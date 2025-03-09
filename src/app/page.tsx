@@ -1,5 +1,5 @@
 import Avatar from "@/components/avatar";
-import BoopCounter from "@/components/boopCounter";
+import BoopCounter from "@/components/boop-counter";
 import { Button } from "@/components/ui/button";
 import getBoops from "@/utils/server-api/getBoops";
 import {

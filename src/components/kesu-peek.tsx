@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import "../styles/kesuPeek.css";
+import Image from "next/image";
+import "@/styles/kesuPeek.css";
 
 export default function KesuPeek() {
   const [isPeeking, setIsPeeking] = useState(false);
 
-  const handleClick = async (e: React.MouseEvent<HTMLImageElement>) => {
+  const handleClick = async () => {
     if (isPeeking) return;
 
     setIsPeeking(true);
@@ -25,10 +26,11 @@ export default function KesuPeek() {
   return (
     <>
       <div id="kesuPeek">
-        <img
+        <Image
           src="/kesuPeek.webp"
           alt="Kesu Peek"
-          width="200"
+          width={200}
+          height={200}
           draggable="false"
           onClick={handleClick}
         />

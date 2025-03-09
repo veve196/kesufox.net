@@ -5,6 +5,7 @@
   right: 50px;
   bottom: -100px;
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 #kesuPeek:hover {

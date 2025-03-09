@@ -1,9 +1,9 @@
 import Background from "@/components/background";
-import KesuPeek from "@/components/kesuPeek";
-import { Toaster } from "@/components/ui/toaster";
+import KesuPeek from "@/components/kesu-peek";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
