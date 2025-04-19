@@ -12,12 +12,16 @@ interface Props {
 export default function BoopCounter({ count }: Props) {
   const [boopCounter, setBoopCounter] = useState(count);
   useEffect(() => {
-    client.subscribe(
+    const unsubscribe = client.subscribe(
       "databases.web.collections.counters.documents.kesuBoops",
       (response: RealtimeResponseEvent<CounterDocument>) => {
         setBoopCounter(response.payload.count);
       }
     );
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
   return <p>Boops: {boopCounter}</p>;
 }
