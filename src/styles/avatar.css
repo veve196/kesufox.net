@@ -1,0 +1,27 @@
+#avatar {
+  background-image: url("/kesufox.webp");
+  background-size: cover;
+  transition-duration: 0.3s;
+}
+
+#avatar:hover {
+  background-image: url("/kesufox_blush.webp");
+}
+
+.fade-away {
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  animation: fadeAway 2s forwards;
+}
+
+@keyframes fadeAway {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-150px);
+  }
+}
