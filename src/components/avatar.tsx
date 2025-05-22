@@ -31,6 +31,8 @@ export default function Avatar() {
   return (
     <div
       id="avatar"
+      onClick={handleClick}
+      title="Boop me!"
       className="w-[250px] h-[250px] rounded-full mx-auto select-none p-1 border border-background cursor-pointer"
     >
       {/* <Image

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     description: "some stuff about me!",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_DOMAIN}/ref/refsheet.webp`,
-        width: 1100,
-        height: 812,
+        url: `${process.env.NEXT_PUBLIC_DOMAIN}/about/preview.webp`,
+        width: 480,
+        height: 640,
         alt: "Kesufox",
       },
     ],
