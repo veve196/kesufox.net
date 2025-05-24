@@ -1,4 +1,4 @@
-import getContent from "@/servert-api/getContent";
+import getContent from "@/server-api/getContent";
 import { Metadata } from "next/types";
 
 export const metadata: Metadata = {
