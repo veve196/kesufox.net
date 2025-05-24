@@ -34,18 +34,6 @@ export default function Avatar() {
       onClick={handleClick}
       title="Boop me!"
       className="w-[250px] h-[250px] rounded-full mx-auto select-none p-1 border border-background cursor-pointer"
-    >
-      {/* <Image
-        width={250}
-        height={250}
-        src="/kesufox.webp"
-        alt="kesufox avatar"
-        title="Boop me!"
-        priority
-        draggable={false}
-        className="rounded-full mx-auto select-none p-1 border border-background cursor-pointer"
-        onClick={handleClick}
-      /> */}
-    </div>
+    ></div>
   );
 }
