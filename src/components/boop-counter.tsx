@@ -39,7 +39,11 @@ export default function BoopCounter() {
     );
 
     return () => {
-      unsubscribe();
+      try {
+        unsubscribe();
+      } catch (e) {
+        console.debug("Unsubscribe error:", e);
+      }
     };
   }, []);
   return (
