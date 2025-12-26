@@ -20,7 +20,9 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "kesufox",
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN!),
+  metadataBase: process.env.NEXT_PUBLIC_DOMAIN
+    ? new URL(process.env.NEXT_PUBLIC_DOMAIN)
+    : undefined,
 };
 
 export default function RootLayout({
